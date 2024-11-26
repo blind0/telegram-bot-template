@@ -20,22 +20,6 @@ class ConfigDatabase:
     host: str = None
     port: str = None
 
-    def get_db_url(self):
-        if self.protocol == "sqlite":
-            return f"{self.protocol}://{self.file_name}"
-        return f"{self.protocol}://{self.user}:{self.password}@{self.host}:{self.port}"
-
-    def get_tortoise_config(self):
-        return {
-            "connections": {"default": self.get_db_url()},
-            "apps": {
-                "models": {
-                    "models": self.models,
-                    "default_connection": "default",
-                },
-            },
-        }
-
 
 @dataclass
 class ConfigStorage:
@@ -55,7 +39,6 @@ class ConfigSettings:
     owner_id: int
     throttling_rate: float = 0.5
     use_webhook: bool = False
-    use_pyrogram_client: bool = False
     drop_pending_updates: bool = True
 
 

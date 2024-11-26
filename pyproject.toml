@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "telegram-bot-template"
+version = "0.1.0"
+description = ""
+authors = ["love_cube <ahapka1@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiogram = "^3.15.0"
+aiogram-dialog = "^2.2.0"
+coloredlogs = "^15.0.1"
+toml = "^0.10.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
