@@ -11,6 +11,8 @@ aiogram = "^3.15.0"
 aiogram-dialog = "^2.2.0"
 coloredlogs = "^15.0.1"
 toml = "^0.10.2"
+pymongo = "^4.10.1"
+apscheduler = "^3.11.0"
 
 
 [build-system]

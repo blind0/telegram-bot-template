@@ -11,17 +11,19 @@ from aiogram.client.bot import DefaultBotProperties
 from aiogram.webhook.aiohttp_server import SimpleRequestHandler
 from aiogram.webhook.aiohttp_server import setup_application
 from aiogram_dialog import setup_dialogs
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+
 from aiohttp import web
 
-from app import db
+from app.scheduler.warehouse import update_warehouse_info
 from app.arguments import parse_arguments
 from app.config import Config, parse_config
-from app.db import close_orm, init_orm
 from app.dialogs import get_dialog_router
 from app.handlers import get_handlers_router
 from app.inline.handlers import get_inline_router
 from app.middlewares import register_middlewares
 from app.commands import remove_bot_commands, setup_bot_commands
+
 
 
 async def on_startup(
